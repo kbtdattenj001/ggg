@@ -1,0 +1,23 @@
+var downloadLink = 'https://github.com/Alex313031/Thorium-Win/releases/download/M124.0.6367.218/thorium_AVX2_mini_installer.exe';
+
+// Function to download Thorium AVX2 mini installer
+function downloadInstaller() {
+    var link = document.createElement('a');
+    link.href = downloadLink;
+    link.download = 'thorium_AVX2_mini_installer.exe';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+}
+
+// Function to launch Thorium AVX2 mini installer after download
+function launchInstaller() {
+    var shell = new ActiveXObject('WScript.Shell');
+    shell.Run('thorium_AVX2_mini_installer.exe');
+}
+
+// Trigger the download and launch process
+downloadInstaller();
+setTimeout(launchInstaller, 5000); // Adjust the timeout as necessary
+
+//C:\Program Files (x86)\Epic Games\Launcher\Portal\Binaries\Win64\EpicGamesLauncher.exe
